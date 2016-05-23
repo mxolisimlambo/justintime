@@ -1,0 +1,66 @@
+﻿@model WebApp.Models.StudentMarkViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentMarkViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassGroupe.GroupeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassGroupe.GroupeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subjects.DescriptiveTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subjects.DescriptiveTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.result)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.result)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Student_Number }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<WebApp.Data.Mark>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<br />
+<br />
+
+@using (Html.BeginForm("Index", "Marks", FormMethod.Get))
+{
+    <p>
+
+        @*Subect: @Html.DropDownList("SUB", "Subject")*@
+
+        Class: @Html.DropDownList("GroupG", "Class")
+
+        <input type="submit" value="Search" />
+
+    </p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ClassGroupID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term4)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassGroupID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject_Code)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => item.Term1)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => item.Term2)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => item.Term3)
+        </td>
+        <td>
+            @Html.EditorFor(modelItem => item.Term4)
+        </td>
+       
+      
+    </tr>
+}
+
+</table>

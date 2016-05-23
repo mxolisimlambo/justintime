@@ -1,0 +1,129 @@
+﻿@model IEnumerable<WebApp.Models.ApplicationViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant_Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant_Date_Of_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant_Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant_Religion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant_Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application_Grade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Maths_Mark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.English_Mark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZuluHomeLanguage_Mark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parent_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parent_Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parent_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parent_Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parent_Email)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Applicant_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Applicant_Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Applicant_Date_Of_Birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Applicant_Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Applicant_Religion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Applicant_Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Application_Grade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Maths_Mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.English_Mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZuluHomeLanguage_Mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parent_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parent_Surname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parent_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parent_Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parent_Email)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Applicant_IDNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Applicant_IDNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Applicant_IDNumber })
+        </td>
+    </tr>
+}
+
+</table>

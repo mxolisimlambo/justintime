@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    ViewBag.Title = "Welcome";
+    ViewBag.Subheading = "Thank you for visiting the official JG Zuma High School website";
+    Layout = "~/Views/Shared/_school.cshtml";
+}
+ 
+<div class="container">
+    <div class="row">
+        <div class="slider">
+            <ul class="rslides" id="slider1">
+                <li><img src="~/Content/template/img/home-bg.jpg" alt=""></li>
+                <li><img src="images/1.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4">
+            <h2 class="post-title">Applications</h2>
+            <p class="post-subtitle">
+                Apply for admission for 2017.
+            </p>
+            <p>@Html.ActionLink("Apply", "Apply", "Application", null, new { @class = "btn btn-success" })</p>
+        </div>
+     
+  
+          
+        <hr>
+ 
+    </div>
+</div>
+
+
+
+
+ 

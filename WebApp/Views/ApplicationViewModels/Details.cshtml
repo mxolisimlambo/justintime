@@ -1,0 +1,154 @@
+﻿@model WebApp.Models.ApplicationViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ApplicationViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Date_Of_Birth)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Date_Of_Birth)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Religion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Religion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Applicant_Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Applicant_Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Application_Grade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Application_Grade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Maths_Mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Maths_Mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.English_Mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.English_Mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZuluHomeLanguage_Mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZuluHomeLanguage_Mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Applicant_IDNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

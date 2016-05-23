@@ -1,0 +1,191 @@
+﻿@model WebApp.Data.Mark
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "Marks", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Mark</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+
+        <div class="step">
+            <div class="form-group">
+                @Html.LabelFor(model => model.StudentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.StudentID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ClassGroupID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ClassGroupID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ClassGroupID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Subject_Code, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Subject_Code, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Subject_Code, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Term1, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Term1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Term1, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Term2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Term2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Term2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Term3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Term3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Term3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Term4, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Term4, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Term4, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+
+     
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="pull-right">
+                    <button type="button" class="action btn-sky text-capitalize back btn">Back</button>
+                    <button type="button" class="action btn-sky text-capitalize next btn">Next</button>
+                    <input type="submit" value="Submit" class="action btn-hot text-capitalize submit btn" />
+                </div>
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>*@
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+        $(document).ready(function () {
+            var current = 1;
+
+            widget = $(".step");
+            btnnext = $(".next");
+            btnback = $(".back");
+            btnsubmit = $(".submit");
+
+            // Init buttons and UI
+            widget.not(':eq(0)').hide();
+            hideButtons(current);
+            setProgress(current);
+
+            // Next button click action
+            btnnext.click(function () {
+                if (current < widget.length) {
+                    // Check validation
+                    if ($(".form").valid()) {
+                        widget.show();
+                        widget.not(':eq(' + (current++) + ')').hide();
+                        setProgress(current);
+                    }
+                }
+                hideButtons(current);
+            })
+
+            // Back button click action
+            btnback.click(function () {
+                if (current > 1) {
+                    current = current - 2;
+                    if (current < widget.length) {
+                        widget.show();
+                        widget.not(':eq(' + (current++) + ')').hide();
+                        setProgress(current);
+                    }
+                }
+                hideButtons(current);
+            })
+
+            $('.form').validate({ // initialize plugin
+                ignore: ":not(:visible)",
+                rules: {
+                    FirstName: { required: true, minlength: 3 },
+                    LastName: { required: true, minlength: 3 },
+                    Email: { required: true, email: true },
+                    Phone: "required",
+                    Address: "required",
+                    //country: "required",
+                    //username: "required",
+                    //password: "required",
+                    //rpassword: { required: true, equalTo: "#password" },
+                },
+            });
+
+        });
+
+        // Change progress bar action
+        setProgress = function (currstep) {
+            var percent = parseFloat(100 / widget.length) * currstep;
+            percent = percent.toFixed();
+            $(".progress-bar").css("width", percent + "%").html(percent + "%");
+        }
+
+        // Hide buttons according to the current step
+        hideButtons = function (current) {
+            var limit = parseInt(widget.length);
+
+            $(".action").hide();
+
+            if (current < limit) btnnext.show();
+            if (current > 1) btnback.show();
+            if (current == limit) {
+                // Show entered values
+                $(".display label:not(.control-label)").each(function () {
+                    console.log($(this).find("label:not(.control-label)").html($("#" + $(this).data("id")).val()));
+                });
+                btnnext.hide();
+                btnsubmit.show();
+            }
+        }
+</script>
+

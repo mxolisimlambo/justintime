@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebApp.Models.ClassGroupViewModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassGroupe_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grade_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GroupeName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassGroupe_id)
+            @*@Html.EditorFor(model => item.ClassGroupe_id, new { htmlAttributes = new { @class = "form-control" } })*@
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.GroupeName)*@
+            @Html.DisplayFor(model => item.Grade_id, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.GroupeName)*@
+            @Html.DisplayFor(model => item.GroupeName, new { htmlAttributes = new { @class = "form-control" } })
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ClassGroupe_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ClassGroupe_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ClassGroupe_id })
+        </td>
+    </tr>
+}
+
+</table>

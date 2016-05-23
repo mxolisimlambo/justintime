@@ -1,0 +1,103 @@
+﻿@model IEnumerable<WebApp.Data.AttendReccord>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<body>
+    <form>
+        <div>
+            <h1><marquee>Welcome To Attendance Reccord </marquee></h1>
+        </div>
+    </form>
+</body>
+
+<a>
+    <li> @Html.ActionLink("Attendance_Next_Day", "Edit", "EditAttend")</li>
+</a>
+
+@using (Html.BeginForm("Index", "AttendReccords", FormMethod.Get))
+{
+    <b>Search by:</b>@Html.RadioButton("searchBy", "StudentNo")<text>StudentNo</text>
+    @Html.RadioButton("searchBy", "Day")<text>Day</text>
+    @Html.RadioButton("searchBy", "Class")<text>Class</text><br />
+    <br />
+    @Html.TextBox("studentNo");<input type="submit" value="Search" />
+}
+<br />
+<br />
+<div style="font-family:Arial">
+    <table border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GradeGroupID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Attends)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Absent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Await)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Remark)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GradeGroupID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Day)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Attends)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Absent)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Await)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remark)
+                </td>
+                <td>
+                    @Html.ActionLink("Check", "Edit", new { id = item.AttendReccordID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AttendReccordID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AttendReccordID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+

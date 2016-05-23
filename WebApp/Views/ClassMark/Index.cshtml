@@ -1,0 +1,105 @@
+﻿@model IEnumerable<WebApp.Models.ClassMarkViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_No)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Student_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassGroupe_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mark21)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mark12)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mark23)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mark32)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_No)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.Student_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassGroupe_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark21)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark12)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark23)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject5)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mark32)
+        </td>
+       
+    </tr>
+}
+
+</table>

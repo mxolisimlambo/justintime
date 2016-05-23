@@ -1,0 +1,112 @@
+﻿@model IEnumerable<WebApp.Data.Mark>
+
+@{
+    ViewBag.Title = "TermThree";
+}
+<style>
+    table, th, td {
+        border: 1px solid blue;
+        border-collapse: collapse;
+    }
+
+    hr {
+        color: black;
+    }
+    /*th, td {
+        padding: 5px;
+    }*/
+</style>
+<body onload="window.print()">
+    <div>
+        @Html.Label("Student ID: ") @ViewBag.Id <br />
+        @Html.Label("Student Name: ") @ViewBag.Name <br />
+        @Html.Label("Student Age: ") @ViewBag.Age <br />
+    </div>
+    <h3 style="text-align: center">Report card</h3>
+    <br />
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            @*<th>
+                    @Html.DisplayNameFor(model => model.Student.Student_IDNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ClassGroupID)
+                </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Subject_Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Term1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Term2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Term3)
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Term4)
+                </th>
+                
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Student.Student_IDNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ClassGroupID)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Term1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Term2)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Term3)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.Term4)
+                    </td>
+                    @*<td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.Markid }) |
+        @Html.ActionLink("Details", "Details", new { id=item.Markid }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.Markid })
+    </td>*@
+            </tr>
+        }
+
+    </table>
+    <div>
+        <span class="input-group-addon" id="basic-addon3">Comments:</span>
+    </div>
+    <textarea rows="5" cols="100" style="align-content: center"></textarea>
+    @*<div class="input-group input-group-sm">
+            <span class="input-group-addon" id="basic-addon3">Comments:</span>
+            <input type="text" cols="40" rows="5" style="width:1080px; height:50px;" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>*@<br /><br />
+    <div class="col-lg-6">
+        @Html.Label("Teachers Signature:")<hr>
+    </div>
+    <div class="col-lg-6">
+        @Html.Label("Date: ")<hr>
+    </div>
+    <br /><br /><br />
+    <div class="col-lg-6">
+        @Html.Label("Principal Signature:")<hr>
+    </div>
+    <div class="col-lg-6">
+        @Html.Label("Date: ")<hr>
+    </div>
+</body>
+<br /><br />
+<br /><br />
+<a href="@Url.Action("MarkPrint", "Report")" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span>Export To PDF</a>
+
+

@@ -1,0 +1,114 @@
+﻿@model WebApp.Models.ClassMarkViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ClassMarkViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassGroupe.GroupeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassGroupe.GroupeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mark21)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark21)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mark12)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark12)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mark23)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark23)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject5)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject5)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mark32)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark32)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Student_No }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Application successful";
+    Layout = "~/Views/Shared/_school.cshtml";
+}
+
+<h2>@ViewBag.Tile</h2>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-12 alert alert-success">
+        <p>
+            Thank you for applying for admission at JG Zuma High School.
+            We have sent you a confimation SMS to the phone number that you've supplied.
+        </p>
+        <p>
+            Please note that if you have not received feedback within <strong>15 (fifteen) days</strong>, please consider your application unsuccessful.
+            @Html.ActionLink("Contact", "Contact", "Home") the school for more information.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <p class="col-md-5 col-md-offset-5">@Html.ActionLink("Go to home page", "Index", "Home")</p>
+</div>
+
+
+

@@ -1,0 +1,72 @@
+﻿@model List<WebApp.Data.Attend>
+
+@{
+    ViewBag.Title = "Fillter";
+    Layout = "~/Views/Shared/_school.cshtml";
+}
+<br />
+<br />
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3 text-center">
+        @using (Html.BeginForm("Fillter", "EditAttend", FormMethod.Post))
+        {
+            <text> 
+
+            Class: @Html.DropDownList("GroupG", "Class")
+            </text>
+            <input type="submit" value="Search" />
+        }
+    </div>
+</div>
+<br />
+<a>
+    <li> @Html.ActionLink("Attendance Reccord", "Index", "AttendReccords")</li>
+</a>
+<br />
+<br />
+
+@using (@Html.BeginForm("Edit", "EditAttend", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th></th>
+            <th>Student No</th>
+            <th>StudentName</th>
+            <th>GradeGroupID</th>
+            <th>Day</th>
+            <th>Date</th>
+            <th>Attends</th>
+            <th>Absent</th>
+            <th>Await</th>
+            <th>Remark</th>
+        </tr>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <td>@Html.HiddenFor(model => model[i].AttendID)</td>
+                <td>@Html.EditorFor(model => model[i].StudentNo)</td>
+                <td>@Html.EditorFor(model => model[i].StudentName, new { @readonly = "true" })</td>
+                <td>@Html.EditorFor(model => model[i].GradeGroupID)</td>
+                <td>@Html.EditorFor(model => model[i].Day)</td>
+                <td>@Html.EditorFor(model => model[i].Date)</td>
+                <td>@Html.EditorFor(model => model[i].Attends)</td>
+                <td>@Html.EditorFor(model => model[i].Absent)</td>
+                <td>@Html.EditorFor(model => model[i].Await)</td>
+                <td>@Html.EditorFor(model => model[i].Remark)</td>
+              
+            </tr>
+        }
+    </table>
+
+    <br />
+    <br />
+    <p><input type="submit" value="Save" /></p>
+    <p style="color:green; font-size:24px;">
+        @ViewBag.Message
+    </p>
+}
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

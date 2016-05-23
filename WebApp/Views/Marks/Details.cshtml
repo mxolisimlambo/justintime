@@ -1,0 +1,74 @@
+﻿@model WebApp.Data.Mark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassGroupID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassGroupID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Term1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Term1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Term2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Term2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Term3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Term3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Term4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Term4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StudentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StudentID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Markid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
